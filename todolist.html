@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>TO-DO list</title>
+    </head>
+    <body>
+            <form>
+               Enter date :  <input type="text"> 
+            </form>
+
+
+
+
+
+        <!--Taking input from user for their todolist elements-->
+        Submit your today's work-load to divide into a list : <input type="text" id="new_list_item">
+        <button onClick="addItem()">Submit</button>
+
+
+
+
+
+        <!--Creating a list using js array and provinding some essential pre-defined elements which will be displayed by default-->
+        <script type="text/javascript">
+            var listitems =['Complete the assignments for DOS', 'Attend Seminar', 'Working on portfolio website'];
+        </script>
+
+        <script type="text/javascript">
+            function addItem()
+            {
+                var tempItem = document.getElementById("new_list_item").value;
+                listitems.push(listitems);
+                displayList(tempItem);
+                // while taking input from user just blank the text-field after entering into the text-field
+                document.getElementById("new_list_item").value='';
+                 
+            }
+        </script>
+    
+
+        <!--Displaying the list using a function-->
+        <div id="display">
+            <h3 class=heading>Your's TO-DO-List</h3>
+            <ul>
+                <script type="text/javascript">
+                    listitems.forEach(displayList);
+
+                    function displayList(item)
+                    {
+                        document.getElementById("display").innerHTML += "<li>"+item+"</li>"
+                    }
+                </script>
+            </ul>
+        </div>
+
+    
+        <!--Add items into the list-->
+
+    </body>
+</html>
